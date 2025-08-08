@@ -1,13 +1,17 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.app-container{
+  background-color: rgba(255, 0, 0, 0.326);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.weather-card{
+  background-color: rgba(0, 128, 0, 0.554);
+}
+
+.weather-box-placeholder{
+  background-color: rgba(0, 0, 255, 0.45);
+}
+.search-section{
+  background-color: rgb(158, 3, 29);
+}
+.city-input{
+  background-color: yellow;
 }

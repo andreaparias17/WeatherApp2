@@ -2,19 +2,24 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Counter</h1>
-        <p>Current Count {count}</p>
-        <button type='button' onClick={() => setCount((prev) => prev + 1)}>Increment Count</button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-      </header>
+  return(
+    <div className="app-container">
+      <h1>Whats the Weather?</h1>
+
+      <div className="weather-card">
+        <div className="weather-box-placeholder"></div>
+
+        {/* search bar section */}
+        <div classname="search-section">
+          <label htmlFor="city-input">Enter City:</label>
+          <input id="city-input" type="text" placeholder="City Name"/>
+          <button>Search</button>
+           </div>
+      </div>
     </div>
-  );
+
+  )
+  
 }
 
 export default App;
