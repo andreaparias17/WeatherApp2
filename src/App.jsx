@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import './App.css';
+import SearchBar from './components/SearchBar';
 
 function App() {
+
+  
+  const handleSearch = (term)=> {
+    console.log("User searched for:", term);
+    // later: call geocoding(term) --> weather
+  };
+
   return(
     <div className="app-container">
       <h1>Whats the Weather?</h1>
@@ -9,17 +17,10 @@ function App() {
       <div className="weather-card">
         <div className="weather-box-placeholder"></div>
 
-        {/* search bar section */}
-        <div classname="search-section">
-          <label htmlFor="city-input">Enter City:</label>
-          <input id="city-input" type="text" placeholder="City Name"/>
-          <button>Search</button>
-           </div>
+        <SearchBar onSearch={handleSearch} /> 
       </div>
     </div>
-
-  )
-  
+  );
 }
 
 export default App;
