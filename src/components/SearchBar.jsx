@@ -19,8 +19,8 @@ function SearchBar({ onSearch, initialValue = ""}) {
 
 return(
         <form className="search-section" onSubmit={handleSubmit}>
-            <label htmlFor="city-input">Enter City or Zip Code:</label>
-            <input id="city-input" type="text" placeholder="e.g, New York, 10001" value={value}
+            <label htmlFor="city-input">Enter City: </label>
+            <input id="city-input" type="text" placeholder="e.g, New York" value={value}
             onChange={(e) => setValue(e.target.value)}
             />
             <button type="submit" disabled={!value.trim()}>Search</button>

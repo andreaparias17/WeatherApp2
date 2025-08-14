@@ -5,31 +5,14 @@ import WeatherCard from './components/WeatherCard.jsx';
 import { geocodeLocation } from './utils/geocodeLocation';
 import { fetchWeather } from './utils/fetchWeather';
 
+
+
 function App() {
 
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("")
 ;
-
-// const handleSearch = async (term)=> {
-//     try{
-//       setLoading(true);
-//       setError("");
-//       setWeatherData(null);
-
-//       const {lat, lon} = await geocodeLocation(term);
-
-//       const data = await fetchWeather(lat, lon);
-
-//       setWeatherData(data);
-//     }catch (err){
-//       console.error(err);
-//       setError("Could not fetch Weather. Try another location.");
-//     }finally{
-//       setLoading(false);
-//     }
-//   };
 
 const handleSearch = async (term) => {
   try {
@@ -54,28 +37,29 @@ const handleSearch = async (term) => {
   }
 };
 
+return (
+  <div className="landing-shell">
+    <div className="landing-card card">
+      <h3 className="app-title">Whats the Weather?</h3>
 
-  return(
-    <div className="app-container">
-      <h1>Whats the Weather?</h1>
+    
+      <img className="hero-art" src="public/sunhero.png" alt="weather icon" />
 
-      <div className="weather-card">
-        
+      <h2 className="tagline">Enter City Name:</h2>
 
-
-        <div className="weather-box-placeholder"></div>
-
-        <SearchBar onSearch={handleSearch} />
-        {loading && <p>Loading..</p>} 
-        {error && <p className="error">{error}</p>}
-        {weatherData ? (
-          <WeatherCard data={weatherData}/>
-        
-        ) : ( <div className="weather-box-placeholder"></div>)}
-
-      </div>
+      
+      <SearchBar onSearch={handleSearch} />
     </div>
-  );
+
+  
+    {weatherData && <WeatherCard data={weatherData} />}
+    
+
+    {loading && <p className="status">Loading…</p>}
+    {error && <p className="status error">{error}</p>}
+  </div>
+);
+
 }
 
 export default App;
